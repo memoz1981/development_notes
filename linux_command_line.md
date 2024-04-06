@@ -15,7 +15,7 @@ Have a strong hope to complete reading the book and not to hesitate to do exerci
 
 `cd` - change directory
 
-Some examples:
+*some_examples*:
 `cd` change to home directory
 
 `cd ~` change to home directory
@@ -24,6 +24,34 @@ Some examples:
 
 ### 3. Exploring the system
 
-`ls` - list content of the directory
+`ls` list content of the directory
+
+`file` determine file type. file name extension in linux are not indicative. use this command to determine the file type. in unix like systems -> everything is a file. 
+
+`less` view text file contents. developed as an improvement to unix tool more and stands for "less is more"
+
+*some_examples*:
+
+`ls -ltr` -l option: long format output, -t option: sort according to time, -r option: reverse sorting
+
+`file picture.jpeg` will output the type of the file (perhaps based on the metadata)
+
+`less /etc/passwd` display the contents of the file /etc/passwd
+
+### 4. Manipulating files and directories
+
+`cp` copy files (and since directories are files this also applies to the directories)
+
+`mv` both for moving and renaming files (and again for directories)
+
+`mkdir` create directory
+
+`rm` remove files (and directories)
+
+`ln` create hard and symbolic links
+
+
+
+
 
  
