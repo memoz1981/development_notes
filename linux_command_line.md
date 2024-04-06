@@ -12,14 +12,18 @@ Have a strong hope to complete reading the book and not to hesitate to do exerci
 ### 2. Navigating
 
 `pwd` - print current directory name
+
 `cd` - change directory
 
 Some examples:
 `cd` change to home directory
+
 `cd ~` change to home directory
+
 `cd ~user` change to home directory of a user
 
 ### 3. Exploring the system
 
 `ls` - list content of the directory
+
  
