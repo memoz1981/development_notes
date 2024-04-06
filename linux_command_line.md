@@ -131,6 +131,70 @@ There are 2 types of links:
 
 `ln -s file link` will create a symbolic link
 
+### 5. Working with Commands
+
+`type command` will show the type of the command (like shell built int, executable etc. )
+
+`which executable` only for executables. will display the executable file location. 
+
+`help` get help for shell built-ins
+
+`--help` display help page for executables
+
+`man` display a command's manual page
+
+`apropos` display list of appropriate commands. will search for term in man pages. 
+
+`info` display a commands info entry - this is GNU project alternative to man. 
+
+`whatis` display one-line manual page descriptions
+
+`alias` create an alias for a command
+
+#### What are commands? 
+
++ en executable program
+
++ a command built into the shell (shell builtins)
+
++ a shell function
+
++ an alias  
+
+##### Command notation
+
++ square brackets: optional items
+
++ vertical bar: mutually exclusive items (one or other)
+
++ cd [-L|[-P[-e]]] [dir]: cd command can be followed by either -L or -P, and if -P used -e can also be used. dir name is optional. 
+
+**examples**
+
+`type type` output: *type is a shell builtin* 
+
+`which ls` output: */usr/bin/ls*
+
+`which type` no output as type is builtin. which can only be used with executables. 
+
+`help type` will display the shell help page for type builtin command
+
+`ls --help` display help for ls executable
+
+`man ls` display manual for ls executable using program man
+
+`apropos partition` will display file name and section from man - same with man -k option 
+
+`whatis ls` - will display man page title and name for ls command
+
+`info ls` - similar to above, just from GNU project. 
+
+`alias` will list all the set aliases
+
+`unalias name` will remove the alias with name name
+
+`alias foo='cd /user; ls; cd'` will create an alias named foo with corresponding action
+
 
 
 
