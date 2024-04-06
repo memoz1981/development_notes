@@ -167,7 +167,7 @@ There are 2 types of links:
 
 + vertical bar: mutually exclusive items (one or other)
 
-+ cd [-L|[-P[-e]]] [dir]: cd command can be followed by either -L or -P, and if -P used -e can also be used. dir name is optional. 
++ `cd [-L|[-P[-e]]] [dir]`: cd command can be followed by either -L or -P, and if -P used -e can also be used. dir name is optional. 
 
 **examples**
 
@@ -195,8 +195,56 @@ There are 2 types of links:
 
 `alias foo='cd /user; ls; cd'` will create an alias named foo with corresponding action
 
+### 6. I/O Redirection
+
+`cat` concatenate files
+
+`sort` sort lines of text
+
+`uniq` report/omit repeated lines
+
+`grep` print lines matching a pattern
+
+`wc` print newline, word and byte counts for a file
+
+`head` output the first part of a file
+
+`tail` output the last part of a file
+
+`tee` read from standard input and write to standard output and files
+
+#### Standard Input, Output, Error
+
+In unix like system - everything is a file - thus std input, output, and error also act like a file. By default both std output and std error are linked to the display and std input is linked to the keyboard. Those can be re-directed. 
+
+**examples**
+
+`ls -l /usr/bin > trucated-out.txt` redirects the output of command `ls -l /usr/bin` to txt file rather than the screen and file is truncated before writing. Note std error is still re-directed to the standard output. if file doesn't exist an error will be displayed.
+
+`ls -l /usr/bin >> appended-out.txt` redirects the output of command `ls -l /usr/bin` to txt file rather than the screen and appends to file (previous text will be kept). Note std error is still re-directed to the standard output. if file doesn't exist an error will be displayed.
+
+`>out.txt` will generate an empty text file. if file exist it will be truncated. 
+
+`>>out.txt` similar to above, but this time if file exists - it's contents will not be lost. 
+
+``
+
+``
+
+``
+
+``
+
+``
+
+``
+
+``
+
+``
+
+``
 
 
 
 
- 
