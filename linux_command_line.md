@@ -40,6 +40,8 @@ Have a strong hope to complete reading the book and not to hesitate to do exerci
 
 ### 4. Manipulating files and directories
 
+#### Commands
+
 `cp` copy files (and since directories are files this also applies to the directories)
 
 `mv` both for moving and renaming files (and again for directories)
@@ -50,7 +52,45 @@ Have a strong hope to complete reading the book and not to hesitate to do exerci
 
 `ln` create hard and symbolic links
 
+#### Wildcards
 
+Note that all of above commands are possible with GUI - on the other hand wildcards add more usability to command line and make some tasks easier than GUI.
+
+`*` matches any characters
+
+`?` matches any single characters
+
+`[characters]` matches any character that's a member of the set characters
+
+`[!characters]` matches any characters that's NOT a member of the set characters
+
+`[[:class:]]` matches any character that is a member of the class
+
+*Commonly used classes*
+
+`[:alnum:]` alphanumeric character
+
+`[:alpha:]` alphabetic character
+
+`[:digit:]` numeral
+
+`[:lower:]` lowercase letter
+
+`[:upper:]` uppercase letter
+
+*Wildcard examples*
+
+`*` all files
+
+`g*` any file beginning with g
+
+`data???` any file beginning with data followed by exactly three characters
+
+`[abc]*` any file beginning with a, b or c
+
+`[!abc]*` any file not beginning with a, b, c
+
+`*[[:lower:]123]` any file ending with lowercase letter or 1 or 2 or 3
 
 
 
