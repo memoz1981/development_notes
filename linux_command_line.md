@@ -335,7 +335,7 @@ Commands are "expanded" before shell acts upon it. Good example is wildcards.
 
 `printenv | sort | less` will print env. variables sorted alphabetically
 
-**command substitution** will substitute output of one command and pass to other. $(command) will expand to the output of the command. (in older shell programs ``command`` would do same)
+**command substitution** will substitute output of one command and pass to other. $(command) will expand to the output of the command. (in older shell programs "`command`" would do same)
 
 `file $(ls -d /usr/bin/* | grep zip)` file command will be applied to all files of the output of the pipeline filter
 
