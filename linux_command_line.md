@@ -295,6 +295,8 @@ The shell references those as numbered file streams as below:
 
 `ls /usr/bin | tee out.txt | sort` the output of ls command will be passed to both std in of sort as well as specified txt file. 
 
+### 7. Seeing the world as shell sees it
+
 
 
 
