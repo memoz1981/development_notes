@@ -305,7 +305,47 @@ Expansion and quoting are explained under this section.
 
 Commands are "expanded" before shell acts upon it. Good example is wildcards. 
 
-`echo *` would print the files in current directory, i.e. * in this case is expanded to files under current directory.
+`echo *` would print the files in current directory, i.e. * in this case is expanded to files under current directory. **(note it will NOT display hidden files)**
+
+**pathname expansion** This is the mechanism by which wildcards work. 
+
+`echo [[:upper:]]*` will display any files starting with uppercase character 
+
+`echo /usr/*/share` will display all matching directory names (which are also files in UNIX like systems) - note that "/" characters are important when using wildcards for directories - as the names of the directories are not just text... 
+
+**tilde expansion** home directory of a user (if user not specified current user)
+
+`cd ~foo` expands to `cd /home/foo`
+
+**aithmetic expansion** shell allows arithmetic to be performed by expansion, thus shell can be used as a calculator. `$((expression))` will be evaluated by arithmetic expansion.  
+
+`echo 2 plus 2 makes $((2+2))` output: 2 plus 2 makes 4
+
+**brace expansion** probably coolest expansion. basically anything in braces {..} is evaluated. can have comma sep lists or .. for ranges.
+
+`echo front-{A,B,C}-back` will output front-A-back front-B-back front-C-back
+
+`echo {1..12}-{2020..2024}` will output all months-years between 2020 and 2024 
+
+`echo {Z-A}` guess...
+
+**parameter expansion** ability to store and use small amount of variables. environmental variables are an example to this. Will be covered under scripting expensively. 
+
+`echo $USER` will display user
+
+`printenv | sort | less` will print env. variables sorted alphabetically
+
+**command substitution** will substitute output of one command and pass to other. $(command) will expand to the output of the command. (in older shell programs ``command`` would do same)
+
+`file $(ls -d /usr/bin/* | grep zip)` file command will be applied to all files of the output of the pipeline filter
+
+
+
+
+
+
+
+
 
 
 
