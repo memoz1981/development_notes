@@ -339,7 +339,11 @@ Commands are "expanded" before shell acts upon it. Good example is wildcards.
 
 `file $(ls -d /usr/bin/* | grep zip)` file command will be applied to all files of the output of the pipeline filter
 
+#### Quoting 
 
+Ability to supress unwanted expansions using different quotes. 
+
+**Double quotes** ignores all expansions except for paramneter expansion, arithmetic expansion and command substitution. (as it doesn't ignore $, \ and backtick)
 
 
 
