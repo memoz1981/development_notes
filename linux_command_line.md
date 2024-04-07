@@ -217,6 +217,14 @@ There are 2 types of links:
 
 In unix like system - everything is a file - thus std input, output, and error also act like a file. By default both std output and std error are linked to the display and std input is linked to the keyboard. Those can be re-directed. 
 
+The shell references those as numbered file streams as below: 
+
++ standard input 0
+
++ standard output 1
+
++ standard error 2
+
 **examples**
 
 `ls -l /usr/bin > trucated-out.txt` redirects the output of command `ls -l /usr/bin` to txt file rather than the screen and file is truncated before writing. Note std error is still re-directed to the standard output. if file doesn't exist an error will be displayed.
@@ -227,23 +235,27 @@ In unix like system - everything is a file - thus std input, output, and error a
 
 `>>out.txt` similar to above, but this time if file exists - it's contents will not be lost. 
 
-``
+`ls -l /usr/bin 2>out-error.txt` redirects standard error to output specified truncating the file
 
-``
+`ls -l /notexistingdir/ 2>>out-error.txt` similar to above, but appends rather than truncating
 
-``
+`ls l /usr/bin >out.txt 2>&1` redirects standard output and standard error to out.txt (truncating). It's possible to truncate one and append other. Also it's possible to replace ">" with "1>". Also it's possible for both to show the file name. 
 
-``
+`>/dev/null` it's a bit bucket in UNIX system. basically related output is ignored. 
 
-``
+**cat**
 
-``
+`cat out.txt` will show the content of out.txt without pagination. 
 
-``
+`cat out*.txt >outcombined.txt` will combine all files starting with out in a single file (it will do in ascending order by default)
 
-``
+`cat` will accept text and copy everything written to std output. press Ctrl + D for EOF
 
-``
+`cat >out.txt` will do same as above - this time redirected to txt file
+
+`cat <out.txt` reverse of above - this time will read from out.txt as standard input and provide to standard output. 
+
+`cat <out.txt >out2.txt` standard input is redirected from out.txt and standard output is redirected to out2.txt. basically writes from out.txt to out2.txt
 
 
 
