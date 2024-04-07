@@ -297,6 +297,16 @@ The shell references those as numbered file streams as below:
 
 ### 7. Seeing the world as shell sees it
 
+Expansion and quoting are explained under this section. 
+
+`echo` display a line of text
+
+#### Expansion
+
+Commands are "expanded" before shell acts upon it. Good example is wildcards. 
+
+`echo *` would print the files in current directory, i.e. * in this case is expanded to files under current directory.
+
 
 
 
