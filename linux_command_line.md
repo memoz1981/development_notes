@@ -257,6 +257,46 @@ The shell references those as numbered file streams as below:
 
 `cat <out.txt >out2.txt` standard input is redirected from out.txt and standard output is redirected to out2.txt. basically writes from out.txt to out2.txt
 
+#### Pipelines
+
+`command1 | command2` standard output from command1 is "piped" into standard input for command2
+
+**filters** cascaded pipelines
+
+`ls /bin /usr/bin | sort | less` since there are 2 directories specified, sort will sort combined list and produce one sorted list, which will then be displayed using less. 
+
+**difference between > and |** these CANNOT be used interchangeably
+
+`command >file` command to file
+
+`command1 | command2` command to command
+
+**uniq** removes duplicates
+
+`ls /bin /usr/bin | sort | uniq | less` similar to above, with duplicates removed
+
+**grep pattern filename** print (std out) lines matching a pattern. pattern can be simple text or regular expressions. (-i to ignore case, -v to show not matching)
+
+`grep ory Readme.md` will display the line containing string "ory"
+
+`ls /bin /usr/bin | grep zip` will display all the files under directories whose name contains zip
+
+**head/tail** to print (std out) only specified head/tail lines. by default they print first or last 10 lines, which can be overriden using -l lineCount. 
+
+`head out.txt` will print (std out) first 10 lines
+
+`head -l 20 out.txt` 20 lines this time
+
+`ls /bin /usr/bin | sort | tail -l 20` will print last 20 sorted alphabetically
+
+**`tail -f /var/log/messages` allows to monitor logs realtime (since logs are appended). Ctrl+C to exit**
+
+**tee** with plumbing in mind (pipelines), tee is an intermediate connector. 
+
+`ls /usr/bin | tee out.txt | sort` the output of ls command will be passed to both std in of sort as well as specified txt file. 
+
+
+
 
 
 
