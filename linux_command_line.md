@@ -343,7 +343,31 @@ Commands are "expanded" before shell acts upon it. Good example is wildcards.
 
 Ability to supress unwanted expansions using different quotes. 
 
-**Double quotes** ignores all expansions except for paramneter expansion, arithmetic expansion and command substitution. (as it doesn't ignore $, \ and \`)
+**double quotes** ignores all expansions except for paramneter expansion, arithmetic expansion and command substitution. (as it doesn't ignore $, \ and \`)
+
+`ls -l two words.txt` file name has a space - but this would end up with an error as it will try to display info for file name two 
+
+`ls -l "two words.txt"` will do the job
+
+**Note: Word splitting in std input treats spaces, tabs and newlines as delimiters between words. Double quotes will stop work splitting behaviour**
+
+`echo $(cal)` will display the calendar text with word splitting (this format lost)
+
+`echo "$(cal)"` will keep the format. 
+
+**single quotes** will ignore all expansions. 
+
+`echo '$(ls)'` will just display $(ls)
+
+**escaping characters** will quote a single character. Also it will suppress characters having a special meaning ($, |, & etc.)
+
+`mv bad&filename goodfilename` since special character is used & will cause an error
+
+`mv bad\&filename goodfilename` will do the job
+
+**backslash escape sequences** \n newline, \t tab, \b backslash etc. (-e should be used with echo to interpret these) 
+
+`echo "hello \nworld"` hello and world will be display in 2 lines 
 
 
 
