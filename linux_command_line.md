@@ -365,9 +365,59 @@ Ability to supress unwanted expansions using different quotes.
 
 `mv bad\&filename goodfilename` will do the job
 
-**backslash escape sequences** \n newline, \t tab, \b backslash etc. (-e should be used with echo to interpret these) 
+**backslash escape sequences** \n newline, \t tab, \b b***ackslash etc. (-e should be used with echo to interpret these) 
 
-`echo "hello \nworld"` hello and world will be display in 2 lines 
+`echo "hello \nworld"` hello and world will be display in 2 lines
+
+### 8. Advanced keyboard tricks
+
+#### Command line editing
+
+bash uses a library called Readline for command line editing. 
+
+**cursor movement**
+
+CTRL + A move cursor to beginning of line
+
+CTRL + E ...to end of line
+
+ALT + F forward one word
+
+ALT + B backward one word
+
+CTRL + L same as clear
+
+**modifying text**
+
+CTRL + D delete one character at cursor location
+
+ALT + L make from cursor to end of the word lowercase
+
+ALT + U ...uppercase
+
+**cutting (killing) and pasting (yanking)**
+
+CTRL + K kill from cursor to end of line
+
+CTRL + U kill from beginning of line to cursor
+
+ALT + D kill from cursor to end of word
+
+ALT + BACKSPACE kill from cursor to beginning of word. If at the beginning, kills previous word
+
+CTRL + Y yank text from the kill ring (buffer) to the cursor location
+
+#### Completion
+
+This is auto completion feature of the Readline. 
+
+TAB auto-completion. If more than one match or no match - then nothing is auto completed. 
+
+#### Using History
+
+
+
+
 
 
 
