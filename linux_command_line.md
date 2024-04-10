@@ -415,6 +415,25 @@ TAB auto-completion. If more than one match or no match - then nothing is auto c
 
 #### Using History
 
+bash keeps the history - by default last 500 commands (in modern distros up to 1000). In my case it's definitely more than 2000 (I had 1756 lines)  
+
+**searching history**
+
+history | less view contents of the command history
+
+history | grep /usr/bin
+
+CTRL + R reverse (from last command backwards) incremental search. press Ctrl + R and as you type the search iteratively finds first maching result (most recent one)
+
+**history expansion**
+
+!! repeat last command (equivalent to up arrow then ENTER)
+
+!!number repeat history list item number
+
+!string repeat last history list item starting with string
+
+!?string repeat last history list item containing the string
 
 
 
