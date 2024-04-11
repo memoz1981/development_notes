@@ -483,7 +483,7 @@ When running ls command, first 10 characters are the file attributes as below:
 
 **file types**
 
--   regular file
+\-   regular file
 
 d   directory
 
