@@ -563,7 +563,53 @@ sticky bit (octal 1000) - when applied to directory, prevents users from deletin
 
 `chmod +t dir` or `chmod 1744` would apply sticky bit to a directory. ls -lah would reveal `drwxr-xr-t`
 
-**setgid and sticky bit can be applied to same directory using chmod 3744 as well**
+**setgid and sticky bit can be applied to same directory using `chmod 3744` as well**
+
+#### Changing identities
+
+Sometimes we would want to run a command (or set of commands) under a different identity. There are 3 basic ways to do it: 
+
+1) log out and log in
+
+2) su command (allows running a new shell session or run a single command under different user)
+
+3) sudo command
+
+`su [-[l]] user` a new login shell session for user. l is optional. if user is not specified it starts superuser session. 
+
+`su -c 'command'` run a command as a different user. command should be in '' to have expansion in new shell rather than current one. 
+
+`sudo command` will run a command in current shell. main difference from `su` is that it doesn't require to know superuser password, current user password may be prompted. 
+
+`sudo -i` will start an interactive sudo session
+
+`exit` will leave the sessions above
+
+**chown** command is used to change file owner or group for a file. 
+
+`chown [owner][:[group]] file...` general command usage 
+
+`chown bob file` change file owner to bob
+
+`chown bob:mygroup file` change owner to bob, group to mygroup
+
+`chown :admins file` change group to admins group
+
+`chown bob: file` change owner to bob, group owner to login group of user bob
+
+**in older UNIX systems chown was used only for files, thus `chgrp` command was present to change ownership of group. usage is similar to chown**
+
+#### Changing the password
+
+`passwd` change password of current user
+
+`passwd user` change password of the specified user
+
+
+
+
+
+
 
 
 
