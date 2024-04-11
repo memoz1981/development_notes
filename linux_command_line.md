@@ -435,10 +435,63 @@ CTRL + R reverse (from last command backwards) incremental search. press Ctrl + 
 
 !?string repeat last history list item containing the string
 
+### 9. Permissions
 
+One of the main differences of UNIX like systems from MS-DOS like systems is that they are not only multitasking systems, but also multiuser systems, i.e. more than one user is able to use the computer (and simultaneously as well). 
 
+**commands**
 
+id display user identity
 
+chmod change a file's mode
+
+umask set the default file permissions
+
+su run a shell as another user
+
+sudo execute a command as another user
+
+chown change a file's owner
+
+chgrp change a file's group ownership
+
+passwd change a user's password
+
+#### Owners, group members and everybody else (world)
+
+UNIX security system has following role definitions: 
+
+**owner** owns files and directories, may provide access to groups and/or world 
+
+**group** set of users with certain access level
+
+**world** default priviledges
+
+`id` will display uid, gid and assigned groups of current user
+
+`id user` will display same info that user
+
+**Note:** /etc/passwd will contain user information and /etc/group will contain group info. 
+
+#### Reading, writing and executing
+
+When running ls command, first 10 characters are the file attributes as below: 
+
++ first character is the file type
+
++ remaining characters called file mode, represent rwx permissions for owner, group and world respectively. 
+
+**file types**
+
+-   regular file
+
+d   directory
+
+l   symbolic link. with symbolic link attributes are defaulted to all access - real attributes are present for the actual file pointed. 
+
+c   a character special file. a streaming device, i.e. terminal, /dev/null etc. 
+
+b   a block special file, i.e. hard drive, dvd drive etc. 
 
 
 
