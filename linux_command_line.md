@@ -483,15 +483,61 @@ When running ls command, first 10 characters are the file attributes as below:
 
 **file types**
 
-\-   regular file
+`\-`   regular file
 
-d   directory
+`d`   directory
 
-l   symbolic link. with symbolic link attributes are defaulted to all access - real attributes are present for the actual file pointed. 
+`l`   symbolic link. with symbolic link attributes are defaulted to all access - real attributes are present for the actual file pointed. 
 
-c   a character special file. a streaming device, i.e. terminal, /dev/null etc. 
+`c`   a character special file. a streaming device, i.e. terminal, /dev/null etc. 
 
-b   a block special file, i.e. hard drive, dvd drive etc. 
+`b`   a block special file, i.e. hard drive, dvd drive etc. 
+
+**permission attributes for files**
+
+`r` allow a file to be opened and read.
+
+`w` allows a file to be written to or truncated. rename permission is managed by directory attributes. 
+
+`x` allows a file to be treated as a program and be executed. 
+
+**permission attributes for directories**
+
+`r` allow directory contents to be listed (only if `x` attribute is set)
+
+`w` allows files within a directory to be created, renamed or deleted. (only if `x` attribute is set)
+
+`x` allows a directory to be entered (`cd directory`). Also seems that without this permission nothing is really possible for a directory. 
+
+**chmod octal representation**
+
+only owner can run chmod. (and perhaps the root user).  
+
+`chmod 600 foo.txt` this is the octal representation. 600 === (110)(000)(000) === (rw-)(---)(---)
+
+**Note: Seems it's possible to chmod for a directory even from within a directory - in that case not sure how to restore back the right. hope it will be covered in upcoming sections**
+
+**chmod symbolic representation**
+
+Has 3 parts as below: 
+
++ who `u` for owner, `g` group, `o` others, `a` all. if not present it means all. 
+
++ which operation `-` remove,  `+` add, `=` set exact permission
+
++ permissions `r`,`w`,`x`
+
+**examples**
+
+`chmod u+x foo.txt` add execute permission to owner
+
+`chmod +x foo.txt` add execute permission to all
+
+`chmod a=r,o+x` will set read permissions for all users, and additionally execute permission for owner
+
+**Note: chmod operations on symbolic links have no effect, by default all permissions are set**
+
+**umask** command to change default permissions when creating a file 
 
 
 
