@@ -539,6 +539,34 @@ Has 3 parts as below:
 
 **umask** command to change default permissions when creating a file 
 
+`umask` will show current setting
+
+`umask 0002` will set umask value to 0002. 
+
+**mask values**
+
+(000)(100)(010)(001) === first octal for special permissions, remove read from owner, remove write from group and remove execute from all. 
+
+`umask 0421; touch a.txt; ls -lah a.txt` --w-r--rw-
+
+**some special permissions** 
+
+setuid bit (octal 4000) - program can be run as root user (effective uid is changed to root)
+
+setgid bit (octal 2000) - when applied to a directory, newly created files within directory will be given group ownership of the file. 
+
+sticky bit (octal 1000) - when applied to directory, prevents users from deleting/renaming files, unless they are either directory owner, file owner or superuser. 
+
+`chmod u+s program` or `chmod 4744` applies setuid bit to an executable. ls -lah would reveal `-rws......` 
+
+`chmod g+s dir` or `chmod 2744` applies setgid bit to a directory. ls -lah would reveal `drwxrws...`
+
+`chmod +t dir` or `chmod 1744` would apply sticky bit to a directory. ls -lah would reveal `drwxr-xr-t`
+
+**setgid and sticky bit can be applied to same directory using chmod 3744 as well**
+
+
+
 
 
 
