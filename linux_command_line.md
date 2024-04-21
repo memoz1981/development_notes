@@ -649,6 +649,58 @@ d. process's readyness to resume execution
 
 e. like files, processes have owners, user IDs, effective user IDs etc. 
 
+#### Viewing Processes
+
+##### ps command
+
+`>ps` will just list processes associated with current terminal session. 
+
+**Note:** the columns `TTY` stands for **teletype** and showing controlling terminal session
+
+**Note:** the column `TIME` shows amount of CPU time consumed by corresponding process
+
+`>ps x` shows all processes
+
+**Note:** the column `STAT` is added - short for state. below are the possible values:
+
++ `R` running or ready-to-run 
+
++ `S` sleeping - it's waiting for an event (keystroke, network packet etc.)
+
++ `D` uninterruptible sleep. waiting for I/O like a disk drive
+
++ `T` stopped. the process has been instructed to stop. 
+
++ `Z` a defunct or "zombie" process. child process that's temrinated by parent by not cleaned up yet by its parent.
+
++ `<` a high priority process. this property of process is called "niceness". a process with high priority is said to be less nice. 
+
++ `N` a low priority process. (a nice process). will be served only after less nice processes are served. 
+
+`>ps aux` with more information including processes for all users. below additional columns are visible: 
+
++ `USER` user id
+
++ `%CPU` CPU usage in percent
+
++ `%MEM` memory usage in percent
+
++ `VSZ` virtual memory size
+
++ `RSS` resident set size. amount of RAM in kB
+
++ `START` time when the process has started
+
+**Some useful commands**
+
+`>ps aux | sort -rk 3 | less` sort by CPU usage in descending order, paged with less
+
+`>px aux | sort -rk 4 | less` similar to above, this time for memory %
+
+`ps ux -u mehdi | sort -rk 3 | less` only for user mehdi (note that using root doesn't seem to work, filter can be used)
+
+`ps ux | awk '$1="root"' | sort -rk 3 | less` filter only by root
+
 
 
 
