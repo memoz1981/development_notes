@@ -725,7 +725,39 @@ e. `wa` waiting for I/O
 
 #### Controlling processes
 
+`xlogo` will start a program called xlogo and it will not return until it's closed, or `CTRL + C` is pressed to interrupt - just to demonstrate how processes are run. 
 
+`xlogo &` will start xlogo as a background process returning the shell. we will get associated PID as command output. Command `ps` can be used to verify this. 
+
+`jobs` will display the jobs initialized from current terminal. Important notes:
+
++ it will not display PID
+
++ this is terminal specific - when ran from a different terminal, nothing will be displayed. 
+
+`fg %1` will bring backround task `1` to foreground (number `1` from jobs or when initializing the process). So after this shell will not return until the program is closed, or `CTRL + C` is pressed.
+
+`CTRL + Z` this will move foreground task xlogo to stopped state (T state). it will be unresponsive, except for functionality provided by OS (I think...)
+
+**Note:** to move process out of this state, either `fg %1` or `bg %1` can be used. 
+
+#### Signals
+
+Signal are one of the several ways OS communicates with programs/processes. 
+
+`CTRL + C` will send a `INT` (interrupt) signal to associated process
+
+`CTRL + Z` will send a `TSTP` (terminal stop) to associated process
+
+##### kill 
+
+`kill -signal PID | %jobspec` will send the specified signal to the PID / or job number. if signal is not specified default is `TERM` (terminate)
+
+`kill -l` will list all available signal options
+
+**common signals:**
+
++ `1 (TERM)` 
 
 
 
