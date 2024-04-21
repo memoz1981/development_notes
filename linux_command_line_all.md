@@ -805,6 +805,8 @@ shutting down === orderly termination of all the processes and performing some v
 
 `sudo shutdown -r +1 "system will be rebooted after 1 minute"` a time span can be passed to shutdown command. The command will be shown to logged in users. 
 
+**Note:** `shutdown -c` will cancel scheduled shutdowns
+
 #### More process related commands
 
 `pstree` outputs a process list in a tree pattern showing parent/child relationship
