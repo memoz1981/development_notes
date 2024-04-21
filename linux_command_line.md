@@ -605,6 +605,50 @@ Sometimes we would want to run a command (or set of commands) under a different 
 
 `passwd user` change password of the specified user
 
+### 10. Processes
+
+#### Commands
+
+`ps` report a snapshot of current process
+
+`top` display tasks
+
+`jobs` list active jobs
+
+`bg` place a job in the background
+
+`fg` place a job in the foreground
+
+`kill` send a signal to the process
+
+`killall` kill processes by name
+
+`shutdown` shut down or reboot the system
+
+#### How a Process Works
+
++ @ startup -> kernel starts processes + program called init
+
++ init will run a series of scripts called init scripts (located in /etc)
+
++ these scripts start all the system services
+
++ many of these services are **deamon programs** - i.e. background programs without any user input
+
++ parent process / child process -> program launching other programs
+
++ kernel maintains info about each process:  
+
+..+ each process is assigned a process ID (PID)
+
+..+ init is assigned PID of 1
+
+..+ memory assigned to each process
+
+..+ process's readyness to resume execution
+
+..+ like files, processes have owners, user IDs, effective user IDs etc. 
+
 
 
 
