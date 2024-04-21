@@ -8,4 +8,4 @@ This repository will act as a collection of notes on different subjects.
 
 #### [2.1 Part 1 - Learning the Shell](linux_command_line_part_1.md)
 
-#### [2.2 Part 2 - Configuration and Environment](linux_command_line_part_1.md)
+#### [2.2 Part 2 - Configuration and Environment](linux_command_line_part_2.md)
