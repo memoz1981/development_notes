@@ -639,15 +639,15 @@ Sometimes we would want to run a command (or set of commands) under a different 
 
 + kernel maintains info about each process:  
 
-++ each process is assigned a process ID (PID)
+a. each process is assigned a process ID (PID)
 
-..* init is assigned PID of 1
+b. init is assigned PID of 1
 
-..+ memory assigned to each process
+c. memory assigned to each process
 
-..+ process's readyness to resume execution
+d. process's readyness to resume execution
 
-..+ like files, processes have owners, user IDs, effective user IDs etc. 
+e. like files, processes have owners, user IDs, effective user IDs etc. 
 
 
 
