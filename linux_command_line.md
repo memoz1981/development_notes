@@ -701,6 +701,32 @@ e. like files, processes have owners, user IDs, effective user IDs etc.
 
 `ps ux | awk '$1="root"' | sort -rk 3 | less` filter only by root
 
+##### top command
+
+Main difference from **ps** is that top lists processes dynamically, updating (by default) every 3 seconds. 
+
+**fields**
+
++ `top section - load average` average number of runnable processes over 1-last 60 seconds, 2-last 5 mins, 3-last 15 mins
+
++ `%Cpus(s)`
+
+a. `us` user
+
+b. `sy` system (kernel)
+
+c. `ni` nice processes
+
+d. `id` idle
+
+e. `wa` waiting for I/O
+
+**Note:** to quit top press `q`
+
+#### Controlling processes
+
+
+
 
 
 
