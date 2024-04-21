@@ -751,13 +751,75 @@ Signal are one of the several ways OS communicates with programs/processes.
 
 ##### kill 
 
-`kill -signal PID | %jobspec` will send the specified signal to the PID / or job number. if signal is not specified default is `TERM` (terminate)
+`kill -signal PID | %jobspec` will send the specified signal to the PID / or job number. if signal is not specified default is `TERM` (terminate). Note that for signal - integer signal number of signal identifier can be used. 
 
 `kill -l` will list all available signal options
 
 **common signals:**
 
-+ `1 (TERM)` 
++ `1` HUP (hang up) - this is from old good days when terminals were using phone lines. This will signal to the process that the controlling terminal has hang up (similar to closing terminal screen). Deamon processes (i.e. Apache web server) use this to re-initialize and thus to re-read the configuration. 
+
++ `2` INT (interrupt) - same as `CTRL + C`. will usually terminate the program. 
+
++ `9` KILL (kill) - this is not sent to program, rather sent to Kernel to immediate terminate the program. no opportunity is given to the program to clean up.  
+
++ `15` TERM (terminate) - this is default if no signal is specified
+
++ `18` CONT (continue) - will restore a process after STOP or TSTP signal. This signal is used by fg and bg commands. 
+
++ `19` STOP (stop) similar to KILL command, it's handler by Kernel and cannot be ignored. 
+
++ `20` TSTP (terminal stop) the differences from STOP is that it's handled by program, and can be ignored. 
+
++ `3` QUIT (quit)
+
++ `11` SEGV (segmentation violation)
+
++ `28` WINCH (window change) - signal sent by system to the program when a window changes its size. some programs will re-draw themselved to fit to new size (like less and top)
+
+##### killall
+
+provides ability to send signal to multiple programs/processes. 
+
+`killall [-u user] [-signal] name...` it can be used with user and/or process name
+
+`killall -u mehdi` not something that you would want to try - as it would kill everything by (not sure what this 'by' means though) user "mehdi"
+
+`killall -u mehdi xlogo` will kill the program xlogo under user mehdi. 
+
+**Note:** Seems that ps command also lists last received signals. 
+
+#### Shutting down the system
+
+shutting down === orderly termination of all the processes and performing some vital house keeping (sync all mounted file systems etc.)
+
+`sudo reboot` reboot
+
+`sudo halt` stops all processes and halts the CPU, leaving the system powered on. manual intervention is required. 
+
+`sudo poweroff` half + power off
+
+`sudo shutdown -h` halt
+
+`sudo shutdown -r` reboot
+
+`sudo shutdown -r +1 "system will be rebooted after 1 minute"` a time span can be passed to shutdown command. The command will be shown to logged in users. 
+
+#### More process related commands
+
+`pstree` outputs a process list in a tree pattern showing parent/child relationship
+
+`pstree -u mehdi` same for only user mehdi
+
+`vmstat` memory/cpu snapshot of the system resources. 
+
+`vmstat 5` real time vmstat with 5 sec time delay
+
+`xload` real time system load program (graphical)
+
+`tload` similar to xload but draws the graph in terminal
+
+**Note:** running `vmstat 2 &` will cause a real problem - the bash will be pseudo returned - and every time CTRL + C is done it will return and then disappear. I could then run fg and then CTRL + C to exit. 
 
 
 
