@@ -74,6 +74,20 @@ There are 2 kinds of shell sessions.
 
 **Note:** `~/.bashrc` is the most important one, and almost always it's indirectly read by login shell as well
 
+##### What is a startup file
+
+**Note:** As I understood it, and as chat gpt3 pointed out - below can be a pseudo correct summary of relationship between startup scripts and variables: 
+
++ default env variables are initialized by system (bash + environment variables)
+
++ application env variables are managed by corresponding applications
+
++ user specific env variables can be added to startup scripts. 
+
++ startup scripts are able to dynamically assign/modify variables @ startup. 
+
+#### Modifying the environment
+
 
 
 
