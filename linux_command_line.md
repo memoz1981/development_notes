@@ -639,7 +639,7 @@ Sometimes we would want to run a command (or set of commands) under a different 
 
 + kernel maintains info about each process:  
 
-..* each process is assigned a process ID (PID)
+++ each process is assigned a process ID (PID)
 
 ..* init is assigned PID of 1
 
