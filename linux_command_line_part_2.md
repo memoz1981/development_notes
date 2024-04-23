@@ -112,6 +112,8 @@ Fall under 2 main categories:
 
 ### 12. A gentle introduction to VI
 
+#### Introduction to vi
+
 **Note:**vi - pronounced "vee eye". comes from word visual as previous editors were line based, and only one line could be edited at a time. 
 
 Note that by default vi compatibility mode is opened. To have vim opened (with improved functionality) when typing vi, below 2 ways can be followed:
@@ -122,11 +124,23 @@ Note that by default vi compatibility mode is opened. To have vim opened (with i
 
 `vi foo.txt` either will open foo.txt or if it doesn't exist will create and open
 
-**Note:** vi is a modal editor - it starts in `command mode` - every key is a command. to switch to insert mode we press `i` key. `ESC` will exit from insert mode. 
+**Note:** if no changes done to the file and/or force quit is used without any changes to file - file will not be created... 
+
+#### Modes
+
+**Note:** vi is a modal editor - it starts in `command mode` - every key is a command. 
+
+`i` to switch to insert mode 
+
+`ESC` will exit from insert mode. 
 
 `:` ex command
 
-`:w` will save the document
+`:w` will save the document (in command mode)
+
+`:q` quit the editor
+
+`:q!` force quit (will ignore the changes)
 
 **Note:** vim documents refers to command mode as normal mode, and ex commands are called command mode.
 
@@ -153,6 +167,8 @@ Similar to less. (while in command mode)
 `G` to the last line
 
 #### Basic Editing
+
+`u` in command mode will undo last action (vi supports limited undo)
 
 
 
