@@ -2,7 +2,7 @@
 
 ## Part 2. Configuration and Environment***
 
-### The Environment
+### 11. The Environment
 
 #### What is stored in the Environment? 
 
@@ -87,6 +87,33 @@ There are 2 kinds of shell sessions.
 + startup scripts are able to dynamically assign/modify variables @ startup. 
 
 #### Modifying the environment
+
+##### Which files should we modify
+
++ If the changes are applicable to a user only, then it would be safe to add those under user directory files. This is SAFE approach to take. (i.e. under `~/.profile`, `~/.bashrc` etc.) 
+
++ If PATH variable is being modified and/or if a new environment setting is being introduced and/or you are system admin and want to change all user settings, then variables can be added globally (`/etc/profile` or `/etc/bash.bashrc`)
+
+##### Text editors - just tools to perform the changes
+
+Fall under 2 main categories: 
+
++ Graphical (GNOME and KDE both come with GUI text editors)
+
++ Text based (nano, vi and emacs)
+
+**Note:** On most Linux systems vi is replaced by vim (vi improved)
+
+`text_editor_program_name file_name` should open the file in corresponding text editor
+
+`nano ~/.bashrc` will open the file in nano editor - after changes are applied...
+
+`source ~/.bashrc` will force bash to re-read the modified file. Same could be achieved by closing and re-opening the terminal. (Actually in my case changes worked straightaway :) 
+
+
+
+
+
 
 
 
