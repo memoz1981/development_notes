@@ -110,6 +110,58 @@ Fall under 2 main categories:
 
 `source ~/.bashrc` will force bash to re-read the modified file. Same could be achieved by closing and re-opening the terminal. (Actually in my case changes worked straightaway :) 
 
+### 12. A gentle introduction to VI
+
+**Note:**vi - pronounced "vee eye". comes from word visual as previous editors were line based, and only one line could be edited at a time. 
+
+Note that by default vi compatibility mode is opened. To have vim opened (with improved functionality) when typing vi, below 2 ways can be followed:
+
++ add `vi='vim'` to .bashrc file
+
++ `echo "set nocp" << ~/.vimrc` command should do the work (don't ask how)
+
+`vi foo.txt` either will open foo.txt or if it doesn't exist will create and open
+
+**Note:** vi is a modal editor - it starts in `command mode` - every key is a command. to switch to insert mode we press `i` key. `ESC` will exit from insert mode. 
+
+`:` ex command
+
+`:w` will save the document
+
+**Note:** vim documents refers to command mode as normal mode, and ex commands are called command mode.
+
+#### Moving the cursor around
+
+Similar to less. (while in command mode) 
+
+`0` to the beginning of current line
+
+`^` first non-space char on current line
+
+`$` to the end of current line
+
+`w` to the beginning of next word or punctuation chars
+
+`W` similar to above, ignores punctuation chars
+
+`b` to the beginning of previous word or punctuation chars
+
+`B` similar to above, ignores punctuation chars
+
+`xG` to the xth line
+
+`G` to the last line
+
+#### Basic Editing
+
+
+
+
+
+
+
+
+
 
 
 
